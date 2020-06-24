@@ -12,12 +12,18 @@ __license__ = "GPL"
 __email__ = "gurdeep330@gmail.com"
 
 query = 'P0DTC2'
-motif = 'Arm_LIG_1-37'
-domain = 'Arm'
-startm = 812
-endm = 815
-pdb = '4mz5'
-source = '3DID'
+#motif = 'Arm_LIG_1-37'
+motif = 'DOC_MAPK_MEF2A_6'
+#domain = 'Arm'
+domain = 'PF00069'
+#startm = 812
+startm = 1211
+#endm = 815
+endm = 1220
+#pdb = '4mz5'
+#source = '3DID'
+source = 'ELM'
+
 
 ## Make an output folder
 outdir = 'output/'+query+'+'+motif+'+'+domain+'/'
@@ -54,6 +60,16 @@ def run_blast(query, pdbs, domain, motif):
     os.system('makeblastdb -in '+outdir+query+'_pdb.fasta -dbtype "prot" -out '+outdir+query+'_pdb -title '+outdir+query+'_pdb')
     os.system('blastp -query ../covid19/data/fasta_ncbi/covid_fasta/'+query+'.fasta -db '+outdir+query+'_pdb -out '+outdir+'blastp.txt')
 
+def filter_pdbs(elm_pdbs, domain):
+    for line in gzip.open('/home/gurdeep/projects/DB/SIFTS/pdb_chain_pfam.tsv.gz', 'rt'):
+        pdb = line.split()[0].upper()
+        pfam = line.split()[3]
+        #print (pfam)
+        if pdb in elm_pdbs and pfam == domain:
+            print (pdb, domain)
+            sys.exit()
+
+
 pdbs={}
 if source == '3DID':
     flag  = 0
@@ -77,6 +93,16 @@ if source == '3DID':
             run_blast(query, pdbs, domain, motif)
             flag = 0
             break
+elif source == 'ELM':
+    elm_pdbs = []
+    for line in open('/home/gurdeep/projects/DB/ELM/elm_instances.tsv', 'r'):
+        if line[0] != '#':
+            if line.split('\t')[2].replace('"', '') == motif:
+                #print (line)
+                elm_pdbs += line.split('\t')[11].replace('"', '').split()
+    print (elm_pdbs)
+    filter_pdbs(elm_pdbs, domain)
+    sys.exit()
 
 ## Function to map positions of PDB Fasta sequence to its residues numbers in the PDB file
 def reassign_pdb(pdb, given_chain):
@@ -161,6 +187,7 @@ else:
 
 map = reassign_pdb(pdb, chain)
 
+## Pymol starts from here
 #pdb = '6mnl'
 print (pdb)
 print (chain, pdbs[pdb]['interacting_chains'][0])

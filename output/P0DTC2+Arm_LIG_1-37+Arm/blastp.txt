@@ -66,7 +66,7 @@ Effective search space used: 30552
 
 
   Database: output/P0DTC2+Arm_LIG_1-37+Arm/P0DTC2_pdb
-    Posted date:  Jun 24, 2020  1:56 PM
+    Posted date:  Jun 24, 2020  5:41 PM
   Number of letters in database: 24
   Number of sequences in database:  2
 
