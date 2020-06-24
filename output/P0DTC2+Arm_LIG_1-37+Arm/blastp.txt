@@ -1,0 +1,78 @@
+BLASTP 2.10.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: output/P0DTC2+Arm_LIG_1-37+Arm/P0DTC2_pdb
+           2 sequences; 24 total letters
+
+
+
+Query= sp|P0DTC2|SPIKE_SARS2 Spike glycoprotein OS=Severe acute respiratory
+syndrome coronavirus 2 OX=2697049 GN=S PE=1 SV=1
+
+Length=1273
+                                                                      Score        E
+Sequences producing significant alignments:                          (Bits)     Value
+
+4MZ5_C                                                                13.9       0.61 
+4FDR_C                                                                13.9       0.61 
+
+
+>4MZ5_C
+Length=12
+
+ Score = 13.9 bits (24),  Expect = 0.61, Method: Composition-based stats.
+ Identities = 4/5 (80%), Positives = 5/5 (100%), Gaps = 0/5 (0%)
+
+Query  812  PSKRS  816
+            PSKR+
+Sbjct  4    PSKRA  8
+
+
+>4FDR_C
+Length=12
+
+ Score = 13.9 bits (24),  Expect = 0.61, Method: Composition-based stats.
+ Identities = 4/5 (80%), Positives = 5/5 (100%), Gaps = 0/5 (0%)
+
+Query  812  PSKRS  816
+            PSKR+
+Sbjct  4    PSKRA  8
+
+
+
+Lambda      K        H        a         alpha
+   0.320    0.135    0.412    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 30552
+
+
+  Database: output/P0DTC2+Arm_LIG_1-37+Arm/P0DTC2_pdb
+    Posted date:  Jun 24, 2020  1:56 PM
+  Number of letters in database: 24
+  Number of sequences in database:  2
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
