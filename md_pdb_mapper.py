@@ -60,14 +60,49 @@ def run_blast(query, pdbs, domain, motif):
     os.system('makeblastdb -in '+outdir+query+'_pdb.fasta -dbtype "prot" -out '+outdir+query+'_pdb -title '+outdir+query+'_pdb')
     os.system('blastp -query ../covid19/data/fasta_ncbi/covid_fasta/'+query+'.fasta -db '+outdir+query+'_pdb -out '+outdir+'blastp.txt')
 
+def extract_fasta_from_pdb(pdb, new_elm_pdbs):
+    fasta = ''
+    parser = PDBParser()
+    if True:
+        print (pdb)
+        for given_chain in new_elm_pdbs[pdb]['chains']:
+            structure = parser.get_structure(pdb, 'new_elm_pdbs/'+pdb+'.pdb')
+            for model in structure:
+                for chain in model:
+                    if (chain.id == given_chain):
+                        fasta += '>'+pdb+'_'+given_chain+'\n'
+                        for residue in chain:
+                            for atom in residue:
+                                if (atom.id == 'CA'):
+                                    if residue.id[0] == ' ':
+                                        #print (pdb, chain.id, residue.get_resname(), residue.id)
+                                        AA = protein_letters_3to1[residue.get_resname()]
+                                        fasta += AA
+                        fasta += '\n'
+
 def filter_pdbs(elm_pdbs, domain):
+    new_elm_pdbs = {}
     for line in gzip.open('/home/gurdeep/projects/DB/SIFTS/pdb_chain_pfam.tsv.gz', 'rt'):
         pdb = line.split()[0].upper()
         pfam = line.split()[3]
+        chain = line.split()[1]
         #print (pfam)
-        if pdb in elm_pdbs and pfam == domain:
+        if pdb in elm_pdbs:
             print (pdb, domain)
-            sys.exit()
+            if pdb not in new_elm_pdbs:
+                new_elm_pdbs[pdb] = {}
+                new_elm_pdbs[pdb]['chains'] = []
+                new_elm_pdbs[pdb]['interacting_chains'] = []
+            if pfam == domain:
+                new_elm_pdbs[pdb]['interacting_chains'].append(chain)
+            else:
+                new_elm_pdbs[pdb]['chains'].append(chain)
+    for pdb in new_elm_pdbs:
+        if os.path.isfile('pdbs/'+pdb+'.pdb') == False:
+            os.system('wget https://files.rcsb.org/view/'+pdb+'.pdb -O '+'pdbs/'+pdb+'.pdb')
+        extract_fasta_from_pdb(pdb, new_elm_pdbs)
+
+    sys.exit()
 
 
 pdbs={}
