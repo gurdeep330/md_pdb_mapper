@@ -1,0 +1,54 @@
+BLASTP 2.10.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: output/P0DTD8+PCNA_C_LIG_0-2+PCNA_C/P0DTD8_pdb
+           16 sequences; 191 total letters
+
+
+
+Query= sp|P0DTD8|NS7B_SARS2 Protein non-structural 7b OS=Severe acute
+respiratory syndrome coronavirus 2 OX=2697049 PE=3 SV=1
+
+Length=43
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.345    0.154    0.510    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 4953
+
+
+  Database: output/P0DTD8+PCNA_C_LIG_0-2+PCNA_C/P0DTD8_pdb
+    Posted date:  Jun 30, 2020  5:34 PM
+  Number of letters in database: 191
+  Number of sequences in database:  16
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

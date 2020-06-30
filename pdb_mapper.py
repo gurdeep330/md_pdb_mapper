@@ -13,23 +13,32 @@ __email__ = "gurdeep330@gmail.com"
 
 #query = 'P0DTD8'
 query = 'P0DTC2'
-#motif = 'PCNA_C_LIG_0-2'
-motif = 'DOC_MAPK_MEF2A_6'
-#domain = 'PCNA_C'
-domain = 'PF00069'
-#startm = 5
-startm = 1211
-#endm = 10
-endm = 1220
+motif = 'Arm_LIG_1-37'
+#motif = 'DOC_MAPK_MEF2A_6'
+domain = 'Arm'
+#domain = 'PF00069'
+startm = 812
+#startm = 1211
+endm = 815
+#endm = 1220
 #pdb = '4mz5'
-#source = '3DID'
-source = 'ELM'
+source = '3DID'
+#source = 'ELM'
 
 
 ## Make an output folder
 outdir = 'output/'+query+'+'+motif+'+'+domain+'/'
 if os.path.isdir(outdir) == False:
     os.system('mkdir '+outdir)
+
+fasta = ''
+for line in open('../covid19/data/fasta_ncbi/covid_fasta/'+query+'.fasta', 'r'):
+    if line[0] != '>':
+        fasta += line.replace('\n', '')
+
+match = fasta[startm-1:endm]
+print (match)
+#sys.ext()
 
 def run_blast(query, pdbs, domain, motif):
     fasta = ''
@@ -127,15 +136,15 @@ if source == '3DID':
             pdb = line.split()[1].upper()
             if pdb not in pdbs:
                 pdbs[pdb] = {}
-                pdbs[pdb]['chains'] = []
-                pdbs[pdb]['interacting_chains'] = []
-            pdbs[pdb]['chains'].append(line.split()[3].split(':')[0])
-            pdbs[pdb]['interacting_chains'].append(line.split()[2])
+                pdbs[pdb]['motif_chains'] = []
+                pdbs[pdb]['domain_chains'] = []
+            pdbs[pdb]['motif_chains'].append(line.split()[3])
+            pdbs[pdb]['domain_chains'].append(line.split()[2])
             if os.path.isfile('pdbs/'+pdb+'.pdb') == False:
                 os.system('wget https://files.rcsb.org/view/'+pdb+'.pdb -O '+'pdbs/'+pdb+'.pdb')
         elif line[:2] == '//' and flag == 1:
             print (pdbs)
-            run_blast(query, pdbs, domain, motif)
+            #run_blast(query, pdbs, domain, motif)
             flag = 0
             break
 elif source == 'ELM':
@@ -169,7 +178,7 @@ def reassign_pdb(pdb, given_chain):
                 break
     return map
 
-
+'''
 flag = 1
 dic = {}
 #print (len(dic))
@@ -213,7 +222,7 @@ for line2 in open(outdir+'blastp.txt', 'r'):
                     dic[startq + num] = starts + num
 
 print (domain, motif, pdb, chain, startm, endm, dic)
-## Remove the motif chains from interacting_chains if the source is ELM
+## Remove the motif chains from domain_chains if the source is ELM
 for given_pdb in pdbs:
     if given_pdb == pdb:
         for num, given_chain in enumerate(pdbs[given_pdb]['domain_chains']):
@@ -240,20 +249,31 @@ else:
         sys.exit()
 
 map = reassign_pdb(pdb, chain)
-
+'''
 ## Pymol starts from here
 #pdb = '6mnl'
 print (pdb)
-print (chain, pdbs[pdb]['interacting_chains'][0])
-int_chain = pdbs[pdb]['interacting_chains'][0].split(':')[0]
-int_chain_res = pdbs[pdb]['interacting_chains'][0].split(':')[1]
+print (chain, pdbs[pdb]['domain_chains'][0])
+dom_chain = pdbs[pdb]['domain_chains'][0].split(':')[0]
+dom_chain_res = pdbs[pdb]['domain_chains'][0].split(':')[1]
+mot_chain = pdbs[pdb]['motif_chains'][0].split(':')[0]
+mot_chain_res = pdbs[pdb]['motif_chains'][0].split(':')[1]
 cmd.load('pdbs/'+pdb.upper()+'.pdb')
-cmd.hide('everything', 'all')
-cmd.show('cartoon', 'chain '+str(chain)+'+'+str(int_chain))
-cmd.color('white', 'chain '+chain)
-cmd.color('grey', 'chain '+str(int_chain))
+cmd.fab(match, 'query_motif')
+cmd.hide('everything')
+cmd.show('cartoon', 'chain '+str(mot_chain)+'+'+str(dom_chain))
+cmd.show('cartoon', 'query_motif')
+cmd.color('red', 'chain '+mot_chain)
+cmd.color('grey', 'chain '+str(dom_chain))
+cmd.color('yellow', 'query_motif')
+cmd.select('struc_motif', 'resi '+mot_chain_res+' and chain '+mot_chain)
+cmd.color('cyan', 'struc_motif')
+cmd.color('orange', 'resi '+dom_chain_res+' and chain '+dom_chain)
+cmd.super('query_motif', 'struc_motif')
+cmd.center('struc_motif')
+#select  struct, resi 11-15 and chain C
 #cmd.color('yellow', 'chain B')
-cmd.color('red', 'resi '+str(map[dic[startm]])+'-'+str(map[dic[endm]]))
-cmd.color('yellow', 'resi '+str(int_chain_res))
-cmd.label('mot, i. '+str(map[dic[startm]])+' and n. CA and chain '+chain, 'motif')
-cmd.label('dom, i. '+str(int_chain_res.split('-')[0])+' and n. CA and chain '+int_chain, 'domain')
+#cmd.color('red', 'resi '+str(map[dic[startm]])+'-'+str(map[dic[endm]]))
+#cmd.color('yellow', 'resi '+str(int_chain_res))
+#cmd.label('mot, i. '+str(map[dic[startm]])+' and n. CA and chain '+chain, 'motif')
+#cmd.label('dom, i. '+str(int_chain_res.split('-')[0])+' and n. CA and chain '+int_chain, 'domain')
