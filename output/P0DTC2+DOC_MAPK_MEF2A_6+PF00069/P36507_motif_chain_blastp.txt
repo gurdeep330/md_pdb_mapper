@@ -1,0 +1,66 @@
+BLASTP 2.10.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/P36507_motif_chain_pdb
+           1 sequences; 12 total letters
+
+
+
+Query= sp|P36507|MP2K2_HUMAN Dual specificity mitogen-activated protein
+kinase kinase 2 OS=Homo sapiens OX=9606 GN=MAP2K2 PE=1 SV=1
+
+Length=400
+                                                                      Score        E
+Sequences producing significant alignments:                          (Bits)     Value
+
+4H3Q_B                                                                26.2       3e-06
+
+
+>4H3Q_B
+Length=12
+
+ Score = 26.2 bits (56),  Expect = 3e-06, Method: Composition-based stats.
+ Identities = 12/12 (100%), Positives = 12/12 (100%), Gaps = 0/12 (0%)
+
+Query  4   RRKPVLPALTIN  15
+           RRKPVLPALTIN
+Sbjct  1   RRKPVLPALTIN  12
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.137    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 4800
+
+
+  Database: output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/P36507_motif_chain_pdb
+    Posted date:  Jul 1, 2020  10:11 PM
+  Number of letters in database: 12
+  Number of sequences in database:  1
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

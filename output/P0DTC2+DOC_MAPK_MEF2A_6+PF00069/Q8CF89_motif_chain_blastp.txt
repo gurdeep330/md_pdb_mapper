@@ -1,0 +1,66 @@
+BLASTP 2.10.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/Q8CF89_motif_chain_pdb
+           1 sequences; 18 total letters
+
+
+
+Query= sp|Q8CF89|TAB1_MOUSE TGF-beta-activated kinase 1 and MAP3K7-binding
+protein 1 OS=Mus musculus OX=10090 GN=Tab1 PE=1 SV=2
+
+Length=502
+                                                                      Score        E
+Sequences producing significant alignments:                          (Bits)     Value
+
+4LOQ_N                                                                29.6       4e-07
+
+
+>4LOQ_N
+Length=18
+
+ Score = 29.6 bits (65),  Expect = 4e-07, Method: Compositional matrix adjust.
+ Identities = 18/27 (67%), Positives = 18/27 (67%), Gaps = 9/27 (33%)
+
+Query  385  VYPVSVPYSSAQSTSKTSVTLSLVMPS  411
+            VYPVSVPYSS         TLSLVMPS
+Sbjct  1    VYPVSVPYSS---------TLSLVMPS  18
+
+
+
+Lambda      K        H        a         alpha
+   0.313    0.130    0.370    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 9036
+
+
+  Database: output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/Q8CF89_motif_chain_pdb
+    Posted date:  Jul 1, 2020  10:11 PM
+  Number of letters in database: 18
+  Number of sequences in database:  1
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

@@ -1,4 +1,4 @@
-## md_pdb_mapper
+## pdb_mapper
 To map a given pair of motif-domain or domain-domain onto to the best PDB complex
 
 #### If the source is [3DID](https://3did.irbbarcelona.org/)

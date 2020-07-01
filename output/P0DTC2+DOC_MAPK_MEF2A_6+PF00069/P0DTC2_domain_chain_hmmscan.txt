@@ -1,0 +1,101 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Pkinase              PF00069.25   264 4H3Q_A               -            352   4.8e-69  232.7   0.0   1   1   2.2e-72   5.6e-69  232.4   0.0     1   264    17   305    17   305 0.91 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4H3Q_A               -            352   1.2e-35  123.0   0.0   1   1   7.7e-39     2e-35  122.3   0.0     6   200    22   215    18   233 0.92 Protein tyrosine kinase
+APH                  PF01636.23   240 4H3Q_A               -            352   0.00027   21.0   0.0   1   1   1.8e-07   0.00045   20.2   0.0   168   216   137   183   123   197 0.81 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4H3Q_A               -            352     0.009   15.0   0.3   1   1   5.6e-06     0.014   14.3   0.3   201   259   111   168    21   177 0.77 Haspin like kinase domain
+Choline_kinase       PF01633.20   213 4H3Q_A               -            352     0.018   14.6   0.1   1   1   1.1e-05     0.028   14.0   0.1   145   208   135   197    90   201 0.83 Choline/ethanolamine kinase
+Kdo                  PF06293.14   207 4H3Q_A               -            352     0.055   12.8   0.2   1   1   3.1e-05      0.08   12.3   0.2   121   163   119   157    54   170 0.78 Lipopolysaccharide kinase (Kdo/WaaP) family
+Kinase-like          PF14531.6    288 4H3Q_A               -            352     0.073   12.4   0.0   1   1   5.1e-05      0.13   11.5   0.0   129   239   102   209    70   217 0.70 Kinase-like
+Pkinase              PF00069.25   264 4LOO_A               -            349   1.5e-65  221.2   0.0   1   1   6.9e-69   1.8e-65  221.0   0.0     1   264    20   304    20   304 0.90 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOO_A               -            349   1.1e-30  106.8   0.0   1   1   5.3e-34   1.4e-30  106.5   0.0     5   216    24   229    20   263 0.87 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOO_A               -            349   6.7e-05   22.3   0.5   1   1   4.1e-08    0.0001   21.7   0.5    41   171    48   170    33   176 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOO_A               -            349    0.0062   16.5   0.5   1   3      0.27     7e+02   -0.1   0.0    32   108    59   140    23   142 0.64 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOO_A               -            349    0.0062   16.5   0.5   2   3   1.5e-05     0.038   13.9   0.0   168   199   142   171   138   173 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOO_A               -            349    0.0062   16.5   0.5   3   3       1.7   4.3e+03   -2.6   0.0   215   232   294   311   272   321 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOO_A               -            349     0.044   12.7   0.3   1   1   2.6e-05     0.067   12.1   0.3   175   260    78   173    34   183 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOO_A               -            349     0.052   13.8   0.3   1   1   5.3e-05      0.14   12.4   0.3     2    24    26    48    26    51 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOO_A               -            349     0.065   12.5   0.0   1   1   3.8e-05     0.097   12.0   0.0   133   237   111   206    53   213 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOP_A               -            351   1.5e-65  221.2   0.0   1   1     7e-69   1.8e-65  220.9   0.0     1   264    22   306    22   306 0.90 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOP_A               -            351   1.1e-30  106.8   0.0   1   1   5.4e-34   1.4e-30  106.5   0.0     5   216    26   231    22   265 0.87 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOP_A               -            351   6.7e-05   22.3   0.5   1   1   4.1e-08   0.00011   21.7   0.5    41   171    50   172    35   178 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOP_A               -            351    0.0062   16.5   0.5   1   3      0.28   7.1e+02   -0.1   0.0    32   108    61   142    25   144 0.64 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_A               -            351    0.0062   16.5   0.5   2   3   1.5e-05     0.038   13.9   0.0   168   199   144   173   140   175 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_A               -            351    0.0062   16.5   0.5   3   3       1.7   4.3e+03   -2.6   0.0   215   232   296   313   274   323 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOP_A               -            351     0.044   12.7   0.3   1   1   2.6e-05     0.066   12.1   0.3   175   260    80   175    35   185 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOP_A               -            351     0.052   13.8   0.3   1   1   5.3e-05      0.14   12.4   0.3     2    24    28    50    28    53 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOP_A               -            351     0.066   12.5   0.0   1   1   3.9e-05       0.1   11.9   0.0   134   237   114   208    60   215 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOP_B               -            350   1.5e-65  221.2   0.0   1   1     7e-69   1.8e-65  221.0   0.0     1   264    21   305    21   305 0.90 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOP_B               -            350   1.1e-30  106.8   0.0   1   1   5.4e-34   1.4e-30  106.5   0.0     5   216    25   230    21   264 0.87 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOP_B               -            350   6.7e-05   22.3   0.5   1   1   4.1e-08    0.0001   21.7   0.5    41   171    49   171    34   177 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOP_B               -            350    0.0062   16.5   0.5   1   3      0.27     7e+02   -0.1   0.0    32   108    60   141    24   143 0.64 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_B               -            350    0.0062   16.5   0.5   2   3   1.5e-05     0.038   13.9   0.0   168   199   143   172   139   174 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_B               -            350    0.0062   16.5   0.5   3   3       1.7   4.3e+03   -2.6   0.0   215   232   295   312   273   322 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOP_B               -            350     0.045   12.7   0.3   1   1   2.6e-05     0.067   12.1   0.3   175   260    79   174    35   184 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOP_B               -            350     0.052   13.8   0.3   1   1   5.3e-05      0.14   12.4   0.3     2    24    27    49    27    52 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOP_B               -            350     0.066   12.5   0.0   1   1   3.8e-05     0.097   12.0   0.0   133   237   112   207    54   214 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOP_C               -            341   8.4e-66  222.0   0.0   1   1   3.8e-69   9.7e-66  221.8   0.0     1   264    22   296    22   296 0.92 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOP_C               -            341   1.1e-30  106.8   0.0   1   1   5.6e-34   1.4e-30  106.4   0.0     5   215    26   230    22   245 0.86 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOP_C               -            341   6.3e-05   22.4   0.5   1   1   3.9e-08   9.9e-05   21.8   0.5    41   171    50   172    35   178 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOP_C               -            341    0.0062   16.5   0.5   1   3      0.26   6.7e+02    0.0   0.0    32   108    61   142    25   144 0.65 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_C               -            341    0.0062   16.5   0.5   2   3   1.4e-05     0.037   14.0   0.0   168   199   144   173   140   175 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_C               -            341    0.0062   16.5   0.5   3   3       1.7   4.3e+03   -2.6   0.0   215   232   286   303   264   312 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOP_C               -            341     0.043   12.7   0.3   1   1   2.4e-05     0.062   12.2   0.3   175   260    80   175    35   185 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOP_C               -            341      0.05   13.8   0.3   1   1   5.2e-05      0.13   12.5   0.3     2    24    28    50    28    53 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOP_C               -            341     0.063   12.6   0.0   1   1   3.6e-05     0.092   12.0   0.0   133   237   113   208    55   215 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOP_D               -            351   1.5e-65  221.2   0.0   1   1     7e-69   1.8e-65  220.9   0.0     1   264    22   306    22   306 0.90 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOP_D               -            351   1.1e-30  106.8   0.0   1   1   5.4e-34   1.4e-30  106.5   0.0     5   216    26   231    22   265 0.87 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOP_D               -            351   6.7e-05   22.3   0.5   1   1   4.1e-08   0.00011   21.7   0.5    41   171    50   172    35   178 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOP_D               -            351    0.0062   16.5   0.5   1   3      0.28   7.1e+02   -0.1   0.0    32   108    61   142    25   144 0.64 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_D               -            351    0.0062   16.5   0.5   2   3   1.5e-05     0.038   13.9   0.0   168   199   144   173   140   175 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOP_D               -            351    0.0062   16.5   0.5   3   3       1.7   4.3e+03   -2.6   0.0   215   232   296   313   274   323 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOP_D               -            351     0.044   12.7   0.3   1   1   2.6e-05     0.066   12.1   0.3   175   260    80   175    35   185 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOP_D               -            351     0.052   13.8   0.3   1   1   5.3e-05      0.14   12.4   0.3     2    24    28    50    28    53 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOP_D               -            351     0.066   12.5   0.0   1   1   3.9e-05       0.1   11.9   0.0   134   237   114   208    60   215 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOQ_A               -            352   1.5e-65  221.2   0.0   1   1   7.1e-69   1.8e-65  220.9   0.0     1   264    22   306    22   306 0.90 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOQ_A               -            352   1.1e-30  106.8   0.0   1   1   5.5e-34   1.4e-30  106.5   0.0     5   216    26   231    22   265 0.87 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOQ_A               -            352   6.8e-05   22.3   0.5   1   1   4.1e-08   0.00011   21.7   0.5    41   171    50   172    35   178 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOQ_A               -            352    0.0063   16.5   0.5   1   3      0.28   7.1e+02   -0.1   0.0    32   108    61   142    25   144 0.64 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_A               -            352    0.0063   16.5   0.5   2   3   1.5e-05     0.038   13.9   0.0   168   199   144   173   140   175 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_A               -            352    0.0063   16.5   0.5   3   3       1.7   4.4e+03   -2.7   0.0   215   232   296   313   274   323 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOQ_A               -            352     0.044   12.7   0.3   1   1   2.6e-05     0.066   12.1   0.3   175   260    80   175    35   185 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOQ_A               -            352     0.052   13.8   0.3   1   1   5.4e-05      0.14   12.4   0.3     2    24    28    50    28    53 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOQ_A               -            352     0.066   12.5   0.0   1   1     4e-05       0.1   11.9   0.0   134   237   114   208    60   215 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOQ_B               -            351   1.5e-65  221.2   0.0   1   1     7e-69   1.8e-65  220.9   0.0     1   264    22   306    22   306 0.90 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOQ_B               -            351   1.1e-30  106.8   0.0   1   1   5.4e-34   1.4e-30  106.5   0.0     5   216    26   231    22   265 0.87 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOQ_B               -            351   6.7e-05   22.3   0.5   1   1   4.1e-08   0.00011   21.7   0.5    41   171    50   172    35   178 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOQ_B               -            351    0.0062   16.5   0.5   1   3      0.28   7.1e+02   -0.1   0.0    32   108    61   142    25   144 0.64 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_B               -            351    0.0062   16.5   0.5   2   3   1.5e-05     0.038   13.9   0.0   168   199   144   173   140   175 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_B               -            351    0.0062   16.5   0.5   3   3       1.7   4.3e+03   -2.6   0.0   215   232   296   313   274   323 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOQ_B               -            351     0.044   12.7   0.3   1   1   2.6e-05     0.066   12.1   0.3   175   260    80   175    35   185 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOQ_B               -            351     0.052   13.8   0.3   1   1   5.3e-05      0.14   12.4   0.3     2    24    28    50    28    53 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOQ_B               -            351     0.066   12.5   0.0   1   1   3.9e-05       0.1   11.9   0.0   134   237   114   208    60   215 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOQ_C               -            337   3.5e-66  223.3   0.0   1   1   1.6e-69     4e-66  223.1   0.0     1   264    21   292    21   292 0.94 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOQ_C               -            337   1.1e-30  106.8   0.0   1   1   5.5e-34   1.4e-30  106.5   0.0     5   215    25   229    21   244 0.86 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOQ_C               -            337   6.2e-05   22.4   0.5   1   1   3.8e-08   9.6e-05   21.8   0.5    41   171    49   171    34   177 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOQ_C               -            337    0.0035   17.3   0.2   1   3      0.29   7.4e+02   -0.1   0.0    32   108    60   141    24   142 0.63 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_C               -            337    0.0035   17.3   0.2   2   3   1.4e-05     0.036   14.0   0.0   168   199   143   172   139   174 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_C               -            337    0.0035   17.3   0.2   3   3      0.61   1.6e+03   -1.2   0.0   214   229   281   296   200   322 0.61 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOQ_C               -            337     0.043   12.8   0.3   1   1   2.4e-05     0.061   12.3   0.3   175   260    79   174    34   184 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOQ_C               -            337     0.049   13.9   0.3   1   1   5.1e-05      0.13   12.5   0.3     2    24    27    49    27    52 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOQ_C               -            337     0.061   12.6   0.0   1   1   3.5e-05      0.09   12.1   0.0   133   237   112   207    54   214 0.80 Kinase-like
+Pkinase              PF00069.25   264 4LOQ_D               -            351   1.5e-65  221.2   0.0   1   1     7e-69   1.8e-65  220.9   0.0     1   264    21   305    21   305 0.90 Protein kinase domain
+Pkinase_Tyr          PF07714.17   259 4LOQ_D               -            351   1.1e-30  106.8   0.0   1   1   5.4e-34   1.4e-30  106.5   0.0     5   216    25   230    21   264 0.87 Protein tyrosine kinase
+Kdo                  PF06293.14   207 4LOQ_D               -            351   6.7e-05   22.3   0.5   1   1   4.1e-08   0.00011   21.7   0.5    41   171    49   171    34   177 0.89 Lipopolysaccharide kinase (Kdo/WaaP) family
+APH                  PF01636.23   240 4LOQ_D               -            351    0.0062   16.5   0.5   1   3      0.28   7.1e+02   -0.1   0.0    32   108    60   141    24   143 0.64 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_D               -            351    0.0062   16.5   0.5   2   3   1.5e-05     0.038   13.9   0.0   168   199   143   172   139   174 0.89 Phosphotransferase enzyme family
+APH                  PF01636.23   240 4LOQ_D               -            351    0.0062   16.5   0.5   3   3       1.7   4.3e+03   -2.6   0.0   215   232   295   312   273   322 0.59 Phosphotransferase enzyme family
+Haspin_kinase        PF12330.8    367 4LOQ_D               -            351     0.045   12.7   0.3   1   1   2.6e-05     0.067   12.1   0.3   175   260    79   174    35   184 0.73 Haspin like kinase domain
+NAD_binding_8        PF13450.6     68 4LOQ_D               -            351     0.052   13.8   0.3   1   1   5.3e-05      0.14   12.4   0.3     2    24    27    49    27    52 0.95 NAD(P)-binding Rossmann-like domain
+Kinase-like          PF14531.6    288 4LOQ_D               -            351     0.066   12.5   0.0   1   1   3.9e-05       0.1   11.9   0.0   134   237   113   207    59   214 0.80 Kinase-like
+#
+# Program:         hmmscan
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SCAN
+# Query file:      output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/P0DTC2_domain_chain.fasta
+# Target file:     /home/gurdeep/projects/DB/PFAM/Pfam-A.hmm
+# Option settings: hmmscan --domtblout output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/P0DTC2_domain_chain_hmmscan.txt --noali /home/gurdeep/projects/DB/PFAM/Pfam-A.hmm output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/P0DTC2_domain_chain.fasta 
+# Current dir:     /home/gurdeep/projects/md_pdb_mapper
+# Date:            Wed Jul  1 22:11:17 2020
+# [ok]
