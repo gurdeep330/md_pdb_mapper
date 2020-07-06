@@ -54,7 +54,7 @@ Effective search space used: 9036
 
 
   Database: output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/Q8CF89_motif_chain_pdb
-    Posted date:  Jul 1, 2020  10:11 PM
+    Posted date:  Jul 5, 2020  5:24 PM
   Number of letters in database: 18
   Number of sequences in database:  1
 

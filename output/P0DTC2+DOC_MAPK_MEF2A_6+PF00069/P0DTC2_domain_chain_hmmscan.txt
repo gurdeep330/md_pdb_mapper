@@ -97,5 +97,5 @@ Kinase-like          PF14531.6    288 4LOQ_D               -            351     
 # Target file:     /home/gurdeep/projects/DB/PFAM/Pfam-A.hmm
 # Option settings: hmmscan --domtblout output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/P0DTC2_domain_chain_hmmscan.txt --noali /home/gurdeep/projects/DB/PFAM/Pfam-A.hmm output/P0DTC2+DOC_MAPK_MEF2A_6+PF00069/P0DTC2_domain_chain.fasta 
 # Current dir:     /home/gurdeep/projects/md_pdb_mapper
-# Date:            Wed Jul  1 22:11:17 2020
+# Date:            Sun Jul  5 17:24:41 2020
 # [ok]
