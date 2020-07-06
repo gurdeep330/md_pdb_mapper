@@ -42,7 +42,8 @@ def main(d1, d2):
             cmd.load('pdbs/'+pdb.upper()+'.pdb')
             cmd.hide('everything')
             cmd.show('cartoon', 'chain '+chainA+'+'+chainB)
-            cmd.set('label_size', 10)
+            cmd.set('label_size', 7.5)
+            cmd.set('cartoon_fancy_helices', 1)
             cmd.color('red', 'chain '+chainA)
             cmd.color('orange', 'chain '+chainB)
             for row in dd[domains][pdb][coordinates]:
@@ -67,7 +68,7 @@ def main(d1, d2):
             cmd.save(outdir+pdb+'_'+input_protein+'_'+d1+'_'+d2+'_'+coordinates.replace(':', '_').replace('+', '_').replace('-', '_')+'.pse')
             cmd.save(outdir+pdb+'_'+input_protein+'_'+d1+'_'+d2+'_'+coordinates.replace(':', '_').replace('+', '_').replace('-', '_')+'.pdb')
             cmd.delete('all')
-        break
+        #break
     '''
     sys.exit()
 

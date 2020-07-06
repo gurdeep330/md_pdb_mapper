@@ -285,6 +285,7 @@ def main(input_protein, motif, domain, startm, endm, source):
             mot_chain = pdbs[pdb]['motif_chains'][0].split(':')[0]
             mot_chain_res = pdbs[pdb]['motif_chains'][0].split(':')[1]
             cmd.load('pdbs/'+pdb.upper()+'.pdb')
+            cmd.set('cartoon_fancy_helices', 1)
             cmd.fab('Z/'+str(startm)+'/ '+match, 'input_protein_motif')
             cmd.hide('everything')
             cmd.show('cartoon', 'chain '+str(mot_chain))
