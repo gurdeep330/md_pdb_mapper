@@ -5,8 +5,7 @@
 
 ## Import built-in libraries
 import os, sys, gzip
-sys.path.append('/home/gurdeep/pymol/')
-#from pymol import cmd
+from pymol import cmd
 from Bio.Data.IUPACData import protein_letters_3to1
 from Bio.PDB import *
 import urllib.request
@@ -15,8 +14,6 @@ import urllib.request
 __author__ = "Gurdeep Singh"
 __license__ = "GPL"
 __email__ = "gurdeep330@gmail.com"
-
-import os, sys, gzip
 
 def download_pdb_cif(pdb):
     if os.path.isfile('pdbs/'+pdb+'.cif') == False:
@@ -42,6 +39,26 @@ def main(d1, d2):
             cmd.load('pdbs/'+pdb.upper()+'.pdb')
             cmd.hide('everything')
             cmd.show('cartoon', 'chain '+chainA+'+'+chainB)
+            cmd.set('cartoon_fancy_helices', 1)
+            print (pdb, chainA, chainA_res, chainB, chainB_res)
+            x = cmd.centerofmass('chain '+chainA)
+            print ('Success chainA')
+            cmd.pseudoatom('chainA_label', pos=x)
+            global nameA
+            nameA = id_to_name[d1] + '(' + d1+')'
+            cmd.label('chainA_label', 'nameA')
+            try:
+                x = cmd.centerofmass('chain '+chainB)
+                print ('Success chainB')
+                cmd.pseudoatom('chainB_label', pos=x)
+                global nameB
+                nameB = id_to_name[d2] + '(' + d2+')'
+                cmd.label('chainB_label', 'nameB')
+                x = cmd.centerofmass('chain '+chainA+'+'+chainB)
+                cmd.origin(position=x)
+                cmd.center('origin')
+            except:
+                print ('Failed chainB')
             cmd.set('label_size', 7.5)
             cmd.set('cartoon_fancy_helices', 1)
             cmd.color('red', 'chain '+chainA)
@@ -51,19 +68,17 @@ def main(d1, d2):
                 res2 = row[3]
                 #cmd.distance('chain '+chainA+' and i. '+res1+' and n. CB', 'chain '+chainB+' and i. '+res2+' and n. CB')
                 cutoff = 6.5
-                m = cmd.distance('dist', 'chain '+chainA+' and i. '+res1+' and n. CB', 'chain '+chainB+' and i. '+res2+' and n. CB', cutoff)
+                m = cmd.distance('dist', 'chain '+chainA+' and i. '+res1+' and n. CB', 'chain '+chainB+' and i. '+res2+' and n. CB', cutoff, 0)
                 #m = cmd.get_distance(atom1='chain '+chainA+' and i. '+res1+' and n. CB',atom2='chain '+chainB+' and i. '+res2+' and n. CB',state=0)
-                #print (m)
-                if float(m) <= cutoff:
-                    cmd.show('sticks', 'chain '+chainA+' and resi '+res1)
-                    cmd.show('sticks', 'chain '+chainB+' and resi '+res2)
-                    cmd.color('cyan', 'chain '+chainA+' and resi '+res1)
-                    cmd.color('yellow', 'chain '+chainB+' and resi '+res2)
-                else:
-                    cmd.hide('sticks', 'chain '+chainA+' and resi '+res1)
-                    cmd.hide('sticks', 'chain '+chainB+' and resi '+res2)
-                    cmd.color('red', 'chain '+chainA+' and resi '+res1)
-                    cmd.color('orange', 'chain '+chainB+' and resi '+res2)
+                #print (pdb, m, chainA, res1, chainB, res2)
+                cmd.select('res1', 'chain '+chainA+' and resi '+res1)
+                cmd.select('res2', 'chain '+chainB+' and resi '+res2)
+
+                if float(m) != 0.0:
+                    cmd.show('sticks', 'res1')
+                    cmd.show('sticks', 'res2')
+                    cmd.color('cyan', 'res1')
+                    cmd.color('yellow', 'res2')
 
             cmd.save(outdir+pdb+'_'+input_protein+'_'+d1+'_'+d2+'_'+coordinates.replace(':', '_').replace('+', '_').replace('-', '_')+'.pse')
             cmd.save(outdir+pdb+'_'+input_protein+'_'+d1+'_'+d2+'_'+coordinates.replace(':', '_').replace('+', '_').replace('-', '_')+'.pdb')
@@ -113,10 +128,13 @@ def main(d1, d2):
 
 def read_3did_ddi():
     dd = {}
+    id_to_name = {}
     for line in open('/home/gurdeep/projects/DB/3did/3did_flat', 'r'):
         if line.split()[0] == '#=ID':
             domain1 = line.split()[3].split('@')[0].replace('(', '').replace(')', '').split('.')[0]
             domain2 = line.split()[4].split('@')[0].replace('(', '').replace(')', '').split('.')[0]
+            id_to_name[domain1] = line.split()[1]
+            id_to_name[domain2] = line.split()[2]
             domains = domain1+'+'+domain2
             if domains not in dd:
                 dd[domains] = {}
@@ -128,11 +146,12 @@ def read_3did_ddi():
             dd[domains][pdb][coordinates] = []
         elif line[:2] != '//':
             dd[domains][pdb][coordinates].append(line.split()[:4])
-    return dd
+    return dd, id_to_name
 
-dd = read_3did_ddi()
+dd, id_to_name = read_3did_ddi()
 #print (dd)
 print ('starting...')
+nameA=''; nameB=''
 done = []
 for files in os.listdir('/home/gurdeep/projects/covid19/data/interactions/find_interactions/'):
     if files.endswith('_ddi.txt.gz'):
@@ -148,11 +167,11 @@ for files in os.listdir('/home/gurdeep/projects/covid19/data/interactions/find_i
                     if (input_protein+'+'+domain1+'+'+domain2) not in done:
                         main(domain1, domain2)
                         done.append(input_protein+'+'+domain1+'+'+domain2)
-                        sys.exit()
+                        #sys.exit()
                 elif domain2+'+'+domain1 in dd:
                     #print (domain2+domain1, dd[domain2+'+'+domain1])
                     if (input_protein+'+'+domain2+'+'+domain1) not in done:
                         main(domain2, domain1)
                         done.append(input_protein+'+'+domain2+'+'+domain1)
-                        sys.exit()
+                        #sys.exit()
 print ('done')
