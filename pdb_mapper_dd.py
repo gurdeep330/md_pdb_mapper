@@ -41,12 +41,15 @@ def main(d1, d2):
             cmd.show('cartoon', 'chain '+chainA+'+'+chainB)
             cmd.set('cartoon_fancy_helices', 1)
             print (pdb, chainA, chainA_res, chainB, chainB_res)
-            x = cmd.centerofmass('chain '+chainA)
-            print ('Success chainA')
-            cmd.pseudoatom('chainA_label', pos=x)
-            global nameA
-            nameA = id_to_name[d1] + '(' + d1+')'
-            cmd.label('chainA_label', 'nameA')
+            try:
+                x = cmd.centerofmass('chain '+chainA)
+                print ('Success chainA')
+                cmd.pseudoatom('chainA_label', pos=x)
+                global nameA
+                nameA = id_to_name[d1] + '(' + d1+')'
+                cmd.label('chainA_label', 'nameA')
+            except:
+                print ('Failed chainA')
             try:
                 x = cmd.centerofmass('chain '+chainB)
                 print ('Success chainB')
@@ -129,7 +132,7 @@ def main(d1, d2):
 def read_3did_ddi():
     dd = {}
     id_to_name = {}
-    for line in open('/home/gurdeep/projects/DB/3did/3did_flat', 'r'):
+    for line in gzip.open('/home/gurdeep/projects/DB/3did/3did_flat.gz', 'rt'):
         if line.split()[0] == '#=ID':
             domain1 = line.split()[3].split('@')[0].replace('(', '').replace(')', '').split('.')[0]
             domain2 = line.split()[4].split('@')[0].replace('(', '').replace(')', '').split('.')[0]
@@ -159,8 +162,8 @@ for files in os.listdir('/home/gurdeep/projects/covid19/data/interactions/find_i
             if line[0] != '#':
                 #print (line.split('\t'))
                 input_protein = line.split('\t')[0]
-                domain1 = line.split('\t')[2]
-                domain2 = line.split('\t')[6]
+                domain1 = line.split('\t')[3]
+                domain2 = line.split('\t')[7]
                 domains = domain1+'+'+domain2
                 if domain1+'+'+domain2 in dd:
                     #print (domain1+domain2, dd[domain1+'+'+domain2])
